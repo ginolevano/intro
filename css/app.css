@@ -1,0 +1,307 @@
+@charset "UTF-8";
+/* Aquí definimos las Custom properties */
+:root {
+  --poppins: "Poppins", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primario: #f0f0f0;
+    --color-secundario: #181818;
+  }
+}
+@media (prefers-contrast: high) {
+  :root {
+    --color-primario: black;
+    --color-secundario: white;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+
+a {
+  display: block;
+}
+
+p a {
+  display: inline;
+}
+
+li {
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+::-moz-selection {
+  background-color: var(--color-primario);
+  color: var(--color-secundario);
+}
+
+::selection {
+  background-color: var(--color-primario);
+  color: var(--color-secundario);
+}
+
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  display: block;
+  color: inherit;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* (Probándolo, no usar en producción) En el caso de añadir una  */
+/* p svg{
+    display: inline;
+    width: initial;
+} */
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--tipo-principal);
+  color: var(--color-primario);
+  background-color: var(--color-secundario);
+  /* opcional */
+  line-height: 1.4em;
+  /* opcional */
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  /* opcional */
+  font-smooth: always;
+  /* opcional */
+  -webkit-font-smoothing: antialiased;
+  /* opcional */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*puedo cambiar mi variable con !default */
+.conteiner {
+  width: 100%;
+  height: 100vh;
+  background-color: #222222;
+}
+@media screen and (max-width: 1100px) {
+  .conteiner {
+    width: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .conteiner {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.conteinerbg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media screen and (max-width: 480px) {
+  .conteinerbg {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+.conteinerbg .cont:not(:last-child) {
+  margin-bottom: 1em;
+}
+@media screen and (max-width: 480px) {
+  .conteinerbg .cont:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
+}
+.conteinerbg .cont:nth-child(1) {
+  margin-bottom: 1.5em;
+}
+.conteinerbg__img {
+  position: relative;
+  width: 22%;
+}
+@media screen and (max-width: 890px) {
+  .conteinerbg__img {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .conteinerbg__img {
+    width: 50%;
+    margin-bottom: 10em;
+  }
+}
+.conteinerbg__img .conteinerbg__vector {
+  position: absolute;
+  bottom: calc(30 * -0.3px);
+  width: 100%;
+  -webkit-animation: circle 8s linear infinite;
+          animation: circle 8s linear infinite;
+}
+@-webkit-keyframes circle {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+@keyframes circle {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+@media screen and (max-width: 1100px) {
+  .conteinerbg__img .conteinerbg__vector {
+    bottom: calc(30 * -0.2px);
+  }
+}
+@media screen and (max-width: 890px) {
+  .conteinerbg__img .conteinerbg__vector {
+    bottom: calc(30 * -0.px);
+  }
+}
+@media screen and (max-width: 480px) {
+  .conteinerbg__img .conteinerbg__vector {
+    bottom: calc(30 * -0.2px);
+    width: 100%;
+  }
+}
+.conteinerbg__img .conteiner__me {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.conteinerbg__img .conteinerbg__me {
+  width: 62%;
+}
+.conteinerbg__h1 {
+  font-family: var(--poppins);
+  font-weight: 650;
+  font-size: 2.5rem;
+  color: #fafafa;
+  margin-top: 0.2em;
+}
+@media screen and (max-width: 480px) {
+  .conteinerbg__h1 {
+    font-size: 1.3rem;
+  }
+}
+.conteinerbg__p {
+  font-family: var(--poppins);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #9f9f9f;
+}
+@media screen and (max-width: 480px) {
+  .conteinerbg__p {
+    font-size: 1rem;
+  }
+}
